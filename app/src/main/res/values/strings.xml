@@ -11,4 +11,8 @@
     <string name="morning_time">Утреннее время</string>
     <string name="tune">Мелодия</string>
     <string name="by_default">По умолчанию</string>
+
+    <string name="delete_alarm_clock">Удалить будильник</string>
+    <string name="back">Назад</string>
+    <string name="save">Сохранить</string>
 </resources>

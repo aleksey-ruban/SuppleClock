@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background"
+    tools:context=".ui.simpleClock.SimpleClockFragment">
+
+    <LinearLayout
+        android:id="@+id/simple_clock_linear"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp">
+
+            <Button
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:drawableStart="@drawable/ic_back_chevrone"
+                android:drawablePadding="-20dp"
+                android:padding="0dp"
+                android:text="@string/back"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:padding="0dp"
+                android:text="@string/save"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TimePicker
+            android:id="@+id/time_picker"
+            android:layout_width="match_parent"
+            android:layout_height="156dp"
+            android:layout_marginBottom="13dp"
+            android:timePickerMode="spinner"
+            android:theme="@style/TimePickerStyle"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal">
+
+            <Button style="?android:attr/borderlessButtonStyle"
+                android:id="@+id/monday_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginRight="4dp"
+                android:background="@drawable/button_radius8"
+                android:textAllCaps="false"
+                android:textSize="14sp"
+                android:text="Пн"
+                android:textColor="@color/white"/>
+
+
+            <Button style="?android:attr/borderlessButtonStyle"
+                android:id="@+id/tuesday_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="4dp"
+                android:background="@drawable/button_radius8"
+                android:textAllCaps="false"
+                android:textSize="14sp"
+                android:text="Вт"
+                android:textColor="@color/white"/>
+
+            <Button style="?android:attr/borderlessButtonStyle"
+                android:id="@+id/wednesday_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="4dp"
+                android:background="@drawable/button_radius8"
+                android:textAllCaps="false"
+                android:textSize="14sp"
+                android:text="Ср"
+                android:textColor="@color/white"/>
+
+            <Button style="?android:attr/borderlessButtonStyle"
+                android:id="@+id/thursday_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="4dp"
+                android:background="@drawable/button_radius8"
+                android:textAllCaps="false"
+                android:textSize="14sp"
+                android:text="Чт"
+                android:textColor="@color/white"/>
+
+            <Button style="?android:attr/borderlessButtonStyle"
+                android:id="@+id/friday_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="4dp"
+                android:background="@drawable/button_radius8"
+                android:textAllCaps="false"
+                android:textSize="14sp"
+                android:text="Пт"
+                android:textColor="@color/white"/>
+
+            <Button style="?android:attr/borderlessButtonStyle"
+                android:id="@+id/saturday_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="4dp"
+                android:background="@drawable/button_radius8"
+                android:textAllCaps="false"
+                android:textSize="14sp"
+                android:text="Сб"
+                android:textColor="@color/white"/>
+
+            <Button style="?android:attr/borderlessButtonStyle"
+                android:id="@+id/sunday_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:background="@drawable/button_radius8"
+                android:textAllCaps="false"
+                android:textSize="14sp"
+                android:text="Вс"
+                android:textColor="@color/white"
+                />
+
+        </LinearLayout>
+
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            tools:layout="@layout/fragment_alarm_details"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="4dp"
+            android:orientation="horizontal">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="28dp"
+                android:layout_weight="1">
+                <View
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:background="@drawable/circle_red"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="28dp"
+                android:layout_weight="1">
+                <View
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:background="@drawable/circle_orange"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="28dp"
+                android:layout_weight="1">
+                <View
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:background="@drawable/circle_yellow"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="28dp"
+                android:layout_weight="1">
+                <View
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:background="@drawable/circle_green"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="28dp"
+                android:layout_weight="1">
+                <View
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:background="@drawable/circle_light_blue"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="28dp"
+                android:layout_weight="1">
+                <View
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:background="@drawable/circle_blue"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/button_radius18"
+            android:text="@string/delete_alarm_clock"
+            android:textAllCaps="false"
+            android:textSize="14sp"
+            android:textColor="@color/navigation_foreground"/>
+
+    </LinearLayout>
+
+</FrameLayout>
