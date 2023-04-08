@@ -20,4 +20,6 @@
     <string name="work">Работа</string>
     <string name="_14_10">14:10</string>
     <string name="sunday_12_feb">Воскресенье, 12 февраля</string>
+    <string name="type_good_morning">Введите \"Доброе утро\" для отключения будильника</string>
+    <string name="type_words">Введите словосочетание</string>
 </resources>
