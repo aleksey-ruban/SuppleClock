@@ -15,4 +15,9 @@
     <string name="delete_alarm_clock">Удалить будильник</string>
     <string name="back">Назад</string>
     <string name="save">Сохранить</string>
+    <string name="turn_off">Выключить</string>
+    <string name="delay">Отложить</string>
+    <string name="work">Работа</string>
+    <string name="_14_10">14:10</string>
+    <string name="sunday_12_feb">Воскресенье, 12 февраля</string>
 </resources>
