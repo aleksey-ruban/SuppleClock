@@ -6,5 +6,18 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
+    <color name="background">#26282B</color>
+    <color name="item_main">#353941</color>
+    <color name="navigation_main">#5F85DB</color>
+    <color name="navigation_foreground">#131F3A</color>
+    <color name="navigation_unselected">#38538E</color>
+    <color name="text_disabled">#5D6572</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="delete">#DA4545</color>
+    <color name="red_circle">#F5695C</color>
+    <color name="orange_circle">#FFBE4E</color>
+    <color name="yellow_circle">#FBE764</color>
+    <color name="green_circle">#8AF878</color>
+    <color name="light_blue_circle">#5F85DB</color>
+    <color name="blue_circle">#2842CB</color>
 </resources>

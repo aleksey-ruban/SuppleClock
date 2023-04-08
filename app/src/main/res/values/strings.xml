@@ -3,4 +3,12 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
+    <string name="name">Название</string>
+    <string name="alarm_clock">Будильник</string>
+    <string name="allowed_to_delay">Можно отложить</string>
+    <string name="necessary_wakeup">Обязательно проснуться</string>
+    <string name="morning_time">Утреннее время</string>
+    <string name="tune">Мелодия</string>
+    <string name="by_default">По умолчанию</string>
 </resources>

@@ -13,4 +13,16 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="TimePickerStyle" parent="@style/Widget.MaterialComponents.TimePicker">
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:colorControlNormal">@color/white</item>
+    </style>
+
+    <style name="Linear_Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">@color/navigation_main</item>
+        <item name="android:layout_marginStart">18dp</item>
+    </style>
 </resources>
