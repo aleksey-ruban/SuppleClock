@@ -24,4 +24,14 @@
     <string name="type_words">Введите словосочетание</string>
     <string name="hold_to_turn_off">Зажмите и удерживайте кнопки громкости для отключения будильника</string>
     <string name="shake_to_turnoff">Встряхните телефон для отключения будильника</string>
+    <string name="sleep_remind">Напоминание ложиться спать</string>
+    <string name="sleep_target">Цель сна</string>
+    <string name="evening_chill">Отдых перед сном</string>
+    <string name="_8_hours">8 ч</string>
+    <string name="_45_minutes">45 мин</string>
+    <string name="morning_extra_time">Период дополнительного\nутреннего времени</string>
+    <string name="extra_time_hint">Вы проснётесь на 45 минут раньше, если сработает функция утреннего времени.</string>
+    <string name="turning_off_alarm_ways">Способ отключения\nбудильника</string>
+    <string name="random">Случайный</string>
+    <string name="solve_way_hint">Если вы выбрали опцию “Обязательно проснуться”, то отключение будильника будет производиться решением одного из заданий.</string>
 </resources>
