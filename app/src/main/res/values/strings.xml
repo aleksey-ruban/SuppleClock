@@ -23,4 +23,5 @@
     <string name="type_good_morning">Введите \"Доброе утро\" для отключения будильника</string>
     <string name="type_words">Введите словосочетание</string>
     <string name="hold_to_turn_off">Зажмите и удерживайте кнопки громкости для отключения будильника</string>
+    <string name="shake_to_turnoff">Встряхните телефон для отключения будильника</string>
 </resources>

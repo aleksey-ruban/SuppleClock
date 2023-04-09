@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+tools:context=".ShakingSolvingFragment"
+android:background="@color/background">
+
+<Button style="?android:attr/borderlessButtonStyle"
+    android:id="@+id/back_button"
+    android:layout_width="wrap_content"
+    android:layout_height="40dp"
+    android:drawableStart="@drawable/ic_back_chevrone"
+    android:drawablePadding="-20dp"
+    android:padding="0dp"
+    android:text="@string/back"
+    android:textAllCaps="false"
+    android:textColor="@color/white"
+    android:textSize="14sp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_marginStart="20dp"
+    android:layout_marginTop="12dp"/>
+
+<TextView
+    android:id="@+id/shake_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:layout_marginTop="160dp"
+    android:paddingHorizontal="60dp"
+    android:lineSpacingExtra="10dp"
+    android:text="@string/shake_to_turnoff"
+    android:textSize="20sp"
+    android:textColor="@color/navigation_main"
+    android:textStyle="bold"
+    android:textAlignment="center"/>
+
+<ImageView
+    android:id="@+id/shake_image"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/ic_shake_solving"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toTopOf="@+id/shake_textView"
+    />
+
+<Button style="?android:attr/borderlessButtonStyle"
+    android:id="@+id/delay_alarm"
+    android:layout_width="142dp"
+    android:layout_height="38dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:layout_marginBottom="36dp"
+    android:text="@string/delay"
+    android:textAllCaps="false"
+    android:textSize="16sp"
+    android:textColor="@color/navigation_foreground"
+    android:background="@drawable/button_radius40"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

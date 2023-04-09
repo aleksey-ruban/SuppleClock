@@ -24,7 +24,7 @@
         android:layout_marginTop="12dp"/>
 
     <TextView
-        android:id="@+id/hold_textView"
+        android:id="@+id/shake_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,7 +47,7 @@
         android:src="@drawable/ic_holding_solving"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/hold_textView"
+        app:layout_constraintBottom_toTopOf="@+id/shake_textView"
         android:layout_marginBottom="34dp"/>
 
     <Button style="?android:attr/borderlessButtonStyle"
