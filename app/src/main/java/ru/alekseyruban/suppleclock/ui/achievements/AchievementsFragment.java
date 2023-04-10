@@ -1,4 +1,4 @@
-package ru.alekseyruban.suppleclock.ui.notifications;
+package ru.alekseyruban.suppleclock.ui.achievements;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,22 +10,22 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import ru.alekseyruban.suppleclock.databinding.FragmentNotificationsBinding;
+import ru.alekseyruban.suppleclock.databinding.FragmentAchievementsBinding;
 
-public class NotificationsFragment extends Fragment {
+public class AchievementsFragment extends Fragment {
 
-    private FragmentNotificationsBinding binding;
+    private FragmentAchievementsBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        NotificationsViewModel notificationsViewModel =
-                new ViewModelProvider(this).get(NotificationsViewModel.class);
+        AchievementsViewModel achievementsViewModel =
+                new ViewModelProvider(this).get(AchievementsViewModel.class);
 
-        binding = FragmentNotificationsBinding.inflate(inflater, container, false);
+        binding = FragmentAchievementsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         final TextView textView = binding.textNotifications;
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        achievementsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

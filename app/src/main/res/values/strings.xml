@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">SuppleClock</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="alarm_clocks">Будильники</string>
+    <string name="calendar">Календарь</string>
+    <string name="achievements">Достижения</string>
 
     <string name="name">Название</string>
     <string name="alarm_clock">Будильник</string>
@@ -34,4 +34,5 @@
     <string name="turning_off_alarm_ways">Способ отключения\nбудильника</string>
     <string name="random">Случайный</string>
     <string name="solve_way_hint">Если вы выбрали опцию “Обязательно проснуться”, то отключение будильника будет производиться решением одного из заданий.</string>
+
 </resources>
