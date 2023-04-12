@@ -1,4 +1,4 @@
-package ru.alekseyruban.suppleclock;
+package ru.alekseyruban.suppleclock.ui.typing_solving;
 
 import androidx.lifecycle.ViewModelProvider;
 
@@ -12,24 +12,26 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class AlarmDetails extends Fragment {
+import ru.alekseyruban.suppleclock.R;
 
-    private AlarmDetailsViewModel mViewModel;
+public class TypingSolvingFragment extends Fragment {
 
-    public static AlarmDetails newInstance() {
-        return new AlarmDetails();
+    private TypingSolvingViewModel mViewModel;
+
+    public static TypingSolvingFragment newInstance() {
+        return new TypingSolvingFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_alarm_details, container, false);
+        return inflater.inflate(R.layout.fragment_typing_solving, container, false);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(AlarmDetailsViewModel.class);
+        mViewModel = new ViewModelProvider(this).get(TypingSolvingViewModel.class);
         // TODO: Use the ViewModel
     }
 

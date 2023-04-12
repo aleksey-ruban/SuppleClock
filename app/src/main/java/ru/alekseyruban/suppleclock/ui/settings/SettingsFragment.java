@@ -1,4 +1,4 @@
-package ru.alekseyruban.suppleclock;
+package ru.alekseyruban.suppleclock.ui.settings;
 
 import androidx.lifecycle.ViewModelProvider;
 
@@ -11,6 +11,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import ru.alekseyruban.suppleclock.R;
 
 public class SettingsFragment extends Fragment {
 

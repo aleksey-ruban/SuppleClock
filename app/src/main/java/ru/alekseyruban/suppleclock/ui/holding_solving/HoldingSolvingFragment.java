@@ -1,4 +1,4 @@
-package ru.alekseyruban.suppleclock;
+package ru.alekseyruban.suppleclock.ui.holding_solving;
 
 import androidx.lifecycle.ViewModelProvider;
 
@@ -12,24 +12,26 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class TypingSolvingFragment extends Fragment {
+import ru.alekseyruban.suppleclock.R;
 
-    private TypingSolvingViewModel mViewModel;
+public class HoldingSolvingFragment extends Fragment {
 
-    public static TypingSolvingFragment newInstance() {
-        return new TypingSolvingFragment();
+    private HoldingSolvingViewModel mViewModel;
+
+    public static HoldingSolvingFragment newInstance() {
+        return new HoldingSolvingFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_typing_solving, container, false);
+        return inflater.inflate(R.layout.fragment_holding_solving, container, false);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(TypingSolvingViewModel.class);
+        mViewModel = new ViewModelProvider(this).get(HoldingSolvingViewModel.class);
         // TODO: Use the ViewModel
     }
 

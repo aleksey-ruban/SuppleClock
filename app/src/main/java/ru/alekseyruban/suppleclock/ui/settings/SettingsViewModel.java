@@ -1,4 +1,4 @@
-package ru.alekseyruban.suppleclock;
+package ru.alekseyruban.suppleclock.ui.settings;
 
 import androidx.lifecycle.ViewModel;
 

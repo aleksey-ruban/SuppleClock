@@ -34,5 +34,9 @@
     <string name="turning_off_alarm_ways">Способ отключения\nбудильника</string>
     <string name="random">Случайный</string>
     <string name="solve_way_hint">Если вы выбрали опцию “Обязательно проснуться”, то отключение будильника будет производиться решением одного из заданий.</string>
+    <string name="alarms">Будильники</string>
+    <string name="_1_time">1 раз</string>
+    <string name="_09_10">09:10</string>
+    <string name="every_day">Каждый день</string>
 
 </resources>

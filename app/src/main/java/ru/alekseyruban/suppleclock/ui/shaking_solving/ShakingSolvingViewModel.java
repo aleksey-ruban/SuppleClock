@@ -1,4 +1,4 @@
-package ru.alekseyruban.suppleclock;
+package ru.alekseyruban.suppleclock.ui.shaking_solving;
 
 import androidx.lifecycle.ViewModel;
 
