@@ -83,14 +83,14 @@
 
             <ImageButton
                 android:id="@+id/minus_button"
-                android:layout_width="24dp"
+                android:layout_width="27dp"
                 android:layout_height="24dp"
-                app:layout_constraintEnd_toStartOf="@+id/delay_number"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginHorizontal="7dp"
+                android:background="?android:selectableItemBackground"
                 android:src="@drawable/ic_minus_icon"
-                android:background="?android:selectableItemBackground"/>
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/delay_number"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
 

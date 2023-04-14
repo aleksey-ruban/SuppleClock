@@ -38,5 +38,19 @@
     <string name="_1_time">1 раз</string>
     <string name="_09_10">09:10</string>
     <string name="every_day">Каждый день</string>
+    <string name="monday">Пн</string>
+    <string name="tuesday">Вт</string>
+    <string name="wednesday">Ср</string>
+    <string name="thursday">Чт</string>
+    <string name="friday">Пт</string>
+    <string name="saturday">Сб</string>
+    <string name="sunday">Вс</string>
+    <string name="add_week">Добавить неделю</string>
+    <string name="current_week">Текущая неделя</string>
+    <string name="_1">1</string>
+    <string name="figure_out_since">Рассчитать с:</string>
+    <string name="figure_out_until">До:</string>
+    <string name="_26_feb">26 февраля</string>
+    <string name="indefinitely">бессрочно</string>
 
 </resources>

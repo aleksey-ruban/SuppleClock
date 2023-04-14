@@ -14,11 +14,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.List;
-
 import ru.alekseyruban.suppleclock.R;
-import ru.alekseyruban.suppleclock.data.models.AlarmClockItem;
-import ru.alekseyruban.suppleclock.data.repositories.AlarmItemsRepository;
 import ru.alekseyruban.suppleclock.databinding.FragmentAlarmsListBinding;
 import ru.alekseyruban.suppleclock.ui.adapters.AlarmRecyclerViewAdapter;
 

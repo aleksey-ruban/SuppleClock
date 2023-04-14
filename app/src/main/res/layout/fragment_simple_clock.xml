@@ -21,6 +21,7 @@
 
             <Button
                 style="?android:attr/borderlessButtonStyle"
+                android:id="@+id/back_button"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:drawableStart="@drawable/ic_back_chevrone"
@@ -36,6 +37,7 @@
 
             <Button
                 style="?android:attr/borderlessButtonStyle"
+                android:id="@+id/save_button"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:padding="0dp"
@@ -68,11 +70,11 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_marginRight="4dp"
+                android:layout_marginEnd="4dp"
                 android:background="@drawable/button_radius8"
                 android:textAllCaps="false"
                 android:textSize="14sp"
-                android:text="Пн"
+                android:text="@string/monday"
                 android:textColor="@color/white"/>
 
 
@@ -85,7 +87,7 @@
                 android:background="@drawable/button_radius8"
                 android:textAllCaps="false"
                 android:textSize="14sp"
-                android:text="Вт"
+                android:text="@string/tuesday"
                 android:textColor="@color/white"/>
 
             <Button style="?android:attr/borderlessButtonStyle"
@@ -97,7 +99,7 @@
                 android:background="@drawable/button_radius8"
                 android:textAllCaps="false"
                 android:textSize="14sp"
-                android:text="Ср"
+                android:text="@string/wednesday"
                 android:textColor="@color/white"/>
 
             <Button style="?android:attr/borderlessButtonStyle"
@@ -109,7 +111,7 @@
                 android:background="@drawable/button_radius8"
                 android:textAllCaps="false"
                 android:textSize="14sp"
-                android:text="Чт"
+                android:text="@string/thursday"
                 android:textColor="@color/white"/>
 
             <Button style="?android:attr/borderlessButtonStyle"
@@ -121,7 +123,7 @@
                 android:background="@drawable/button_radius8"
                 android:textAllCaps="false"
                 android:textSize="14sp"
-                android:text="Пт"
+                android:text="@string/friday"
                 android:textColor="@color/white"/>
 
             <Button style="?android:attr/borderlessButtonStyle"
@@ -133,7 +135,7 @@
                 android:background="@drawable/button_radius8"
                 android:textAllCaps="false"
                 android:textSize="14sp"
-                android:text="Сб"
+                android:text="@string/saturday"
                 android:textColor="@color/white"/>
 
             <Button style="?android:attr/borderlessButtonStyle"
@@ -145,17 +147,19 @@
                 android:background="@drawable/button_radius8"
                 android:textAllCaps="false"
                 android:textSize="14sp"
-                android:text="Вс"
+                android:text="@string/sunday"
                 android:textColor="@color/white"
                 />
 
         </LinearLayout>
 
-        <fragment
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/details_fragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            tools:layout="@layout/fragment_alarm_details"/>
+            tools:layout="@layout/fragment_alarm_details"
+            android:name="ru.alekseyruban.suppleclock.ui.alarm_details.AlarmDetails"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -164,6 +168,7 @@
             android:layout_marginHorizontal="4dp"
             android:orientation="horizontal">
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/circle_red"
                 android:layout_width="0dp"
                 android:layout_height="28dp"
                 android:layout_weight="1">
@@ -179,6 +184,7 @@
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/circle_orange"
                 android:layout_width="0dp"
                 android:layout_height="28dp"
                 android:layout_weight="1">
@@ -193,6 +199,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/circle_yellow"
                 android:layout_width="0dp"
                 android:layout_height="28dp"
                 android:layout_weight="1">
@@ -207,6 +214,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/circle_green"
                 android:layout_width="0dp"
                 android:layout_height="28dp"
                 android:layout_weight="1">
@@ -221,6 +229,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/circle_light_blue"
                 android:layout_width="0dp"
                 android:layout_height="28dp"
                 android:layout_weight="1">
@@ -235,6 +244,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/circle_blue"
                 android:layout_width="0dp"
                 android:layout_height="28dp"
                 android:layout_weight="1">
@@ -251,6 +261,7 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/button_delete"
             android:layout_width="match_parent"
             android:layout_height="47dp"
             android:layout_marginTop="40dp"
