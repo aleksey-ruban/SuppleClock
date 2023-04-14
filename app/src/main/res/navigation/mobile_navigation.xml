@@ -9,7 +9,14 @@
         android:id="@+id/navigation_alarm_list"
         android:name="ru.alekseyruban.suppleclock.ui.alarms_list.AlarmsListFragment"
         android:label="@string/alarm_clocks"
-        tools:layout="@layout/fragment_alarms_list" />
+        tools:layout="@layout/fragment_alarms_list" >
+        <action
+            android:id="@+id/action_navigation_alarm_list_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_navigation_alarm_list_to_simpleClockFragment"
+            app:destination="@id/simpleClockFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_calendar"
@@ -22,4 +29,44 @@
         android:name="ru.alekseyruban.suppleclock.ui.achievements.AchievementsFragment"
         android:label="@string/achievements"
         tools:layout="@layout/fragment_achievements" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="ru.alekseyruban.suppleclock.ui.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/simpleClockFragment"
+        android:name="ru.alekseyruban.suppleclock.ui.simpleClock.SimpleClockFragment"
+        android:label="fragment_simple_clock"
+        tools:layout="@layout/fragment_simple_clock" />
+    <fragment
+        android:id="@+id/alarmRingingFragment"
+        android:name="ru.alekseyruban.suppleclock.ui.alarm_ringing.AlarmRingingFragment"
+        android:label="fragment_alarm_ringing"
+        tools:layout="@layout/fragment_alarm_ringing" >
+        <action
+            android:id="@+id/action_alarmRingingFragment_to_typingSolvingFragment"
+            app:destination="@id/typingSolvingFragment" />
+        <action
+            android:id="@+id/action_alarmRingingFragment_to_holdingSolvingFragment"
+            app:destination="@id/holdingSolvingFragment" />
+        <action
+            android:id="@+id/action_alarmRingingFragment_to_shakingSolvingFragment"
+            app:destination="@id/shakingSolvingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/typingSolvingFragment"
+        android:name="ru.alekseyruban.suppleclock.ui.typing_solving.TypingSolvingFragment"
+        android:label="fragment_typing_solving"
+        tools:layout="@layout/fragment_typing_solving" />
+    <fragment
+        android:id="@+id/holdingSolvingFragment"
+        android:name="ru.alekseyruban.suppleclock.ui.holding_solving.HoldingSolvingFragment"
+        android:label="fragment_holding_solving"
+        tools:layout="@layout/fragment_holding_solving" />
+    <fragment
+        android:id="@+id/shakingSolvingFragment"
+        android:name="ru.alekseyruban.suppleclock.ui.shaking_solving.ShakingSolvingFragment"
+        android:label="fragment_shaking_solving"
+        tools:layout="@layout/fragment_shaking_solving" />
 </navigation>

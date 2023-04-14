@@ -88,7 +88,7 @@
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="14dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="60dp"
         tools:listitem="@layout/alarm_clock_item"
         tools:itemCount="3"
         />
