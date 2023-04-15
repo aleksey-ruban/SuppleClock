@@ -52,5 +52,16 @@
     <string name="figure_out_until">До:</string>
     <string name="_26_feb">26 февраля</string>
     <string name="indefinitely">бессрочно</string>
+    <string name="_9_30">9:30</string>
+    <string name="monday_f">Понедельник</string>
+    <string name="tuesday_f">Вторник</string>
+    <string name="wednesday_f">Среда</string>
+    <string name="thursday_f">Четверг</string>
+    <string name="friday_f">Пятница</string>
+    <string name="saturday_f">Суббота</string>
+    <string name="sunday_f">Воскресенье</string>
+    <string name="alarm_time">Время сигнала:</string>
+    <string name="done">Готово</string>
+    <string name="holiday">Выходной день</string>
 
 </resources>

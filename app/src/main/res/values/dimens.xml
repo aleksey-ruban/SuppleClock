@@ -3,4 +3,5 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="recycle_view_spacing_14dp">14dp</dimen>
+    <dimen name="spacing_20dp">20dp</dimen>
 </resources>
