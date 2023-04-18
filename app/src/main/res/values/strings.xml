@@ -65,5 +65,9 @@
     <string name="holiday">Выходной день</string>
     <string name="feb_2023">Февраль 2023</string>
     <string name="_15_feb">15 Февраля</string>
+    <string name="random_order">В случайном порядке</string>
+    <string name="music">Музыка</string>
+    <string name="add">Добавить</string>
+    <string name="master_of_puppets_metallica">Master of Puppets – Metallica</string>
 
 </resources>

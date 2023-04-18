@@ -29,6 +29,7 @@
                 android:textColor="@color/white"/>
 
             <EditText
+                android:id="@+id/alarm_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -111,6 +112,7 @@
                 android:textColor="@color/white"/>
 
             <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/necessarily_wakeup_switch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -143,6 +145,7 @@
                 android:textColor="@color/white"/>
 
             <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/morning_time_switch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -181,6 +184,7 @@
             android:textColor="@color/white"/>
 
         <TextView
+            android:id="@+id/melody_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
