@@ -63,5 +63,7 @@
     <string name="alarm_time">Время сигнала:</string>
     <string name="done">Готово</string>
     <string name="holiday">Выходной день</string>
+    <string name="feb_2023">Февраль 2023</string>
+    <string name="_15_feb">15 Февраля</string>
 
 </resources>

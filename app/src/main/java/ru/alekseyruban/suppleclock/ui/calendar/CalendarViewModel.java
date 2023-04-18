@@ -4,16 +4,22 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class CalendarViewModel extends ViewModel {
+import java.util.List;
 
-    private final MutableLiveData<String> mText;
+import ru.alekseyruban.suppleclock.data.models.AlarmClockItem;
+import ru.alekseyruban.suppleclock.data.repositories.AlarmItemsRepository;
+import ru.alekseyruban.suppleclock.data.repositories.CalendarDayAlarmsRepository;
+
+public class CalendarViewModel extends ViewModel {
+    private CalendarDayAlarmsRepository repo;
+    private LiveData<List<AlarmClockItem>> mItems;
 
     public CalendarViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is dashboard fragment");
-    }
 
-    public LiveData<String> getText() {
-        return mText;
+        this.repo = new CalendarDayAlarmsRepository();
+        this.mItems = repo.getData();
+    }
+    public LiveData<List<AlarmClockItem>> getItems() {
+        return mItems;
     }
 }

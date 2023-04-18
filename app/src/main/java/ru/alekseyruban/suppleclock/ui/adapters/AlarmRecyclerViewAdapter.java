@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-import ru.alekseyruban.suppleclock.R;
 import ru.alekseyruban.suppleclock.data.models.AlarmClockItem;
 import ru.alekseyruban.suppleclock.databinding.AlarmClockItemBinding;
 
