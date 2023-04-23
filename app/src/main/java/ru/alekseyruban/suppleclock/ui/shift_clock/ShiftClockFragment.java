@@ -1,4 +1,4 @@
-package ru.alekseyruban.suppleclock.ui.settings;
+package ru.alekseyruban.suppleclock.ui.shift_clock;
 
 import androidx.lifecycle.ViewModelProvider;
 
@@ -14,22 +14,21 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import ru.alekseyruban.suppleclock.R;
-import ru.alekseyruban.suppleclock.databinding.FragmentSettingsBinding;
+import ru.alekseyruban.suppleclock.databinding.FragmentShiftClockBinding;
 
-public class SettingsFragment extends Fragment {
+public class ShiftClockFragment extends Fragment {
 
-    private FragmentSettingsBinding binding;
-    private SettingsViewModel mViewModel;
+    private FragmentShiftClockBinding binding;
+    private ShiftClockViewModel mViewModel;
 
-    public static SettingsFragment newInstance() {
-        return new SettingsFragment();
+    public static ShiftClockFragment newInstance() {
+        return new ShiftClockFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-
-        binding = FragmentSettingsBinding.inflate(inflater, container, false);
+        binding = FragmentShiftClockBinding.inflate(inflater, container, false);
 
         binding.backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,14 +37,13 @@ public class SettingsFragment extends Fragment {
             }
         });
 
-
         return binding.getRoot();
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(SettingsViewModel.class);
+        mViewModel = new ViewModelProvider(this).get(ShiftClockViewModel.class);
         // TODO: Use the ViewModel
     }
 

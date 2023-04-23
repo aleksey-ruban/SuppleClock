@@ -16,6 +16,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
+            android:id="@+id/settings_button"
             android:layout_width="60dp"
             android:layout_height="match_parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -24,6 +25,7 @@
             android:src="@drawable/ic_settings_gear"/>
 
         <ImageButton
+            android:id="@+id/add_alarm_button"
             android:layout_width="60dp"
             android:layout_height="match_parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -50,6 +52,7 @@
             android:background="?android:selectableItemBackground"/>
 
         <TextView
+            android:id="@+id/selected_month"
             android:layout_width="0dp"
             android:layout_weight="4"
             android:layout_height="match_parent"

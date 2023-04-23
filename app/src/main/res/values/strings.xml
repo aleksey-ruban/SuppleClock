@@ -70,4 +70,11 @@
     <string name="add">Добавить</string>
     <string name="master_of_puppets_metallica">Master of Puppets – Metallica</string>
 
+    <string-array name="alarm_types">
+        <item>Обычный</item>
+        <item>Сменный</item>
+        <item>Шаблонный</item>
+    </string-array>
+
+    <string name="choose_alarm_type">Выберите тип будильника</string>
 </resources>

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -39,6 +40,13 @@ public class SelectingMusicFragment extends Fragment {
         binding = FragmentSelectingMusicBinding.inflate(inflater, container, false);
 
         musicViewModel = new ViewModelProvider(this).get(SelectingMusicViewModel.class);
+
+        binding.backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).popBackStack();
+            }
+        });
 
         return binding.getRoot();
     }

@@ -19,13 +19,29 @@
         <action
             android:id="@+id/action_navigation_alarm_list_to_scheduleClockFragment"
             app:destination="@id/scheduleClockFragment" />
+        <action
+            android:id="@+id/action_navigation_alarm_list_to_shiftClockFragment"
+            app:destination="@id/shiftClockFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/navigation_calendar"
         android:name="ru.alekseyruban.suppleclock.ui.calendar.CalendarFragment"
         android:label="@string/calendar"
-        tools:layout="@layout/fragment_calendar" />
+        tools:layout="@layout/fragment_calendar" >
+        <action
+            android:id="@+id/action_navigation_calendar_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_navigation_calendar_to_simpleClockFragment"
+            app:destination="@id/simpleClockFragment" />
+        <action
+            android:id="@+id/action_navigation_calendar_to_scheduleClockFragment"
+            app:destination="@id/scheduleClockFragment" />
+        <action
+            android:id="@+id/action_navigation_calendar_to_shiftClockFragment"
+            app:destination="@id/shiftClockFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_achievements"
@@ -41,7 +57,11 @@
         android:id="@+id/simpleClockFragment"
         android:name="ru.alekseyruban.suppleclock.ui.simpleClock.SimpleClockFragment"
         android:label="fragment_simple_clock"
-        tools:layout="@layout/fragment_simple_clock" />
+        tools:layout="@layout/fragment_simple_clock" >
+        <action
+            android:id="@+id/action_simpleClockFragment_to_selectingMusicFragment"
+            app:destination="@id/selectingMusicFragment" />
+    </fragment>
     <fragment
         android:id="@+id/alarmRingingFragment"
         android:name="ru.alekseyruban.suppleclock.ui.alarm_ringing.AlarmRingingFragment"
@@ -80,10 +100,27 @@
         <action
             android:id="@+id/action_scheduleClockFragment_to_scheduledClockDetailsFragment"
             app:destination="@id/scheduledClockDetailsFragment" />
+        <action
+            android:id="@+id/action_scheduleClockFragment_to_selectingMusicFragment"
+            app:destination="@id/selectingMusicFragment" />
     </fragment>
     <fragment
         android:id="@+id/scheduledClockDetailsFragment"
         android:name="ru.alekseyruban.suppleclock.ui.schedule_clock.ScheduledClockDetailsFragment"
         android:label="fragment_scheduled_clock_details"
         tools:layout="@layout/fragment_scheduled_clock_details" />
+    <fragment
+        android:id="@+id/selectingMusicFragment"
+        android:name="ru.alekseyruban.suppleclock.ui.MusicSelection.SelectingMusicFragment"
+        android:label="fragment_selecting_music"
+        tools:layout="@layout/fragment_selecting_music" />
+    <fragment
+        android:id="@+id/shiftClockFragment"
+        android:name="ru.alekseyruban.suppleclock.ui.shift_clock.ShiftClockFragment"
+        android:label="fragment_shift_clock"
+        tools:layout="@layout/fragment_shift_clock" >
+        <action
+            android:id="@+id/action_shiftClockFragment_to_selectingMusicFragment"
+            app:destination="@id/selectingMusicFragment" />
+    </fragment>
 </navigation>
