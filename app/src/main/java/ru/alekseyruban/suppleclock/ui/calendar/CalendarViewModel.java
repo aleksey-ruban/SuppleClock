@@ -12,13 +12,12 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import ru.alekseyruban.suppleclock.data.models.AlarmClockItem;
-import ru.alekseyruban.suppleclock.data.repositories.AlarmItemsRepository;
+import ru.alekseyruban.suppleclock.data.models.PresentableAlarmClockItem;
 import ru.alekseyruban.suppleclock.data.repositories.CalendarDayAlarmsRepository;
 
 public class CalendarViewModel extends ViewModel {
     private CalendarDayAlarmsRepository repo;
-    private LiveData<List<AlarmClockItem>> mItems;
+    private LiveData<List<PresentableAlarmClockItem>> mItems;
 
     private MutableLiveData<String> selectedMonthContainer = new MutableLiveData<>();
 
@@ -31,7 +30,7 @@ public class CalendarViewModel extends ViewModel {
         this.repo = new CalendarDayAlarmsRepository();
         this.mItems = repo.getData();
     }
-    public LiveData<List<AlarmClockItem>> getItems() {
+    public LiveData<List<PresentableAlarmClockItem>> getItems() {
         return mItems;
     }
 

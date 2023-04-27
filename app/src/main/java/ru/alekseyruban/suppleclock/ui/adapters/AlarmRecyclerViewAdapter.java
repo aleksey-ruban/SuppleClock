@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,19 +12,22 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-import ru.alekseyruban.suppleclock.data.models.AlarmClockItem;
+import ru.alekseyruban.suppleclock.data.models.PresentableAlarmClockItem;
 import ru.alekseyruban.suppleclock.databinding.AlarmClockItemBinding;
+import ru.alekseyruban.suppleclock.ui.alarms_list.OnPresentableAlarmActionsListener;
 
 public class AlarmRecyclerViewAdapter extends RecyclerView.Adapter<AlarmRecyclerViewAdapter.AlarmRecyclerViewItemViewHolder> {
 
-    List<AlarmClockItem> data;
+    private List<PresentableAlarmClockItem> data;
+    private final OnPresentableAlarmActionsListener listener;
 
-    public AlarmRecyclerViewAdapter() {
+    public AlarmRecyclerViewAdapter(OnPresentableAlarmActionsListener listener) {
         this.data = new ArrayList<>();
+        this.listener = listener;
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    public void updateData(List<AlarmClockItem> newData) {
+    public void updateData(List<PresentableAlarmClockItem> newData) {
         data = newData;
 
         notifyDataSetChanged();
@@ -45,7 +49,11 @@ public class AlarmRecyclerViewAdapter extends RecyclerView.Adapter<AlarmRecycler
         holder.binding.timeTextView.setText(data.get(position).getAlarmTime());
         holder.binding.activatedSwitch.setChecked(data.get(position).getActivated());
         holder.binding.repeatingModeTextView.setText(data.get(position).getRepeating_mode());
+
+        holder.binding.activatedSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> listener.onActivatedChanged(data.get(position)));
+        holder.binding.moreDetailsButton.setOnClickListener(v -> listener.onMoreDetailsClick(data.get(position)));
     }
+
 
     @Override
     public int getItemCount() {

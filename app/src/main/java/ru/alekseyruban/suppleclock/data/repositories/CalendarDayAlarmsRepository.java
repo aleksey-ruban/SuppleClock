@@ -4,9 +4,8 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
-import ru.alekseyruban.suppleclock.data.data_sources.AlarmItemsDataSource;
 import ru.alekseyruban.suppleclock.data.data_sources.CalendarDayAlarmsDataSource;
-import ru.alekseyruban.suppleclock.data.models.AlarmClockItem;
+import ru.alekseyruban.suppleclock.data.models.PresentableAlarmClockItem;
 
 public class CalendarDayAlarmsRepository {
     private CalendarDayAlarmsDataSource mDataSource;
@@ -15,7 +14,7 @@ public class CalendarDayAlarmsRepository {
         this.mDataSource = new CalendarDayAlarmsDataSource();
     }
 
-    public LiveData<List<AlarmClockItem>> getData() {
+    public LiveData<List<PresentableAlarmClockItem>> getData() {
         return mDataSource.items();
     }
 

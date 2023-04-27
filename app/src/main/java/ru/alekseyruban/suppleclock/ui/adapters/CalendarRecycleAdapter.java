@@ -11,19 +11,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-import ru.alekseyruban.suppleclock.data.models.AlarmClockItem;
+import ru.alekseyruban.suppleclock.data.models.PresentableAlarmClockItem;
 import ru.alekseyruban.suppleclock.databinding.CalendarDialogItemBinding;
 
 public class CalendarRecycleAdapter extends RecyclerView.Adapter<CalendarRecycleAdapter.CalendarAlarmItemHolder> {
 
-    List<AlarmClockItem> data;
+    List<PresentableAlarmClockItem> data;
 
     public CalendarRecycleAdapter() {
         this.data = new ArrayList<>();
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    public void updateData(List<AlarmClockItem> newData) {
+    public void updateData(List<PresentableAlarmClockItem> newData) {
         data = newData;
 
         notifyDataSetChanged();

@@ -9,12 +9,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
 import ru.alekseyruban.suppleclock.R;
+import ru.alekseyruban.suppleclock.data.models.AlarmCommonItem;
 import ru.alekseyruban.suppleclock.databinding.FragmentAlarmDetailsBinding;
 
 public class AlarmDetails extends Fragment {
@@ -79,6 +82,17 @@ public class AlarmDetails extends Fragment {
             }
         });
 
+        binding.alarmName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                mViewModel.changeName(s.toString());
+            }
+            @Override
+            public void afterTextChanged(Editable s) { }
+        });
+
         mViewModel.necessarilyWakeup().observe(requireActivity(), b -> {
             binding.necessarilyWakeupSwitch.setChecked(b);
         });
@@ -90,5 +104,16 @@ public class AlarmDetails extends Fragment {
         return binding.getRoot();
     }
 
+    public AlarmCommonItem getAlarmCommonInfo() {
+        return mViewModel.formAlarmCommon();
+    }
 
+    public void setAlarmCommonInfo(AlarmCommonItem item) {
+        mViewModel.setCommonInfo(item);
+        if (item.getName().equals("Будильник")) {
+            binding.alarmName.setText("");
+        } else {
+            binding.alarmName.setText(item.getName());
+        }
+    }
 }

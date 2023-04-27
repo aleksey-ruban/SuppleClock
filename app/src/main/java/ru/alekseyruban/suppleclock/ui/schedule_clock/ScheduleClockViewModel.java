@@ -5,9 +5,7 @@ import androidx.lifecycle.ViewModel;
 
 import java.util.List;
 
-import ru.alekseyruban.suppleclock.data.models.AlarmClockItem;
 import ru.alekseyruban.suppleclock.data.models.ScheduledWeekItem;
-import ru.alekseyruban.suppleclock.data.repositories.AlarmItemsRepository;
 import ru.alekseyruban.suppleclock.data.repositories.ScheduledWeekRepository;
 
 public class ScheduleClockViewModel extends ViewModel {

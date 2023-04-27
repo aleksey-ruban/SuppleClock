@@ -51,6 +51,15 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        int activeAlarmCommonId = getIntent().getIntExtra("active_alarm_common_id", -1);
+        if (activeAlarmCommonId > -1) {
+            Bundle bundle = new Bundle();
+            bundle.putInt("common_id", activeAlarmCommonId);
+            navController.navigate(R.id.alarmRingingFragment, bundle);
+        }
+
+
     }
 
 }

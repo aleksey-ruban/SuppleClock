@@ -1,16 +1,30 @@
 package ru.alekseyruban.suppleclock.ui.alarm_details;
 
+import android.app.Application;
+
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
 
-public class AlarmDetailsViewModel extends ViewModel {
+import java.util.ArrayList;
+
+import ru.alekseyruban.suppleclock.data.models.AlarmCommonItem;
+
+public class AlarmDetailsViewModel extends AndroidViewModel {
+
+    private MutableLiveData<String> name = new MutableLiveData<>();
 
     private int allowedDelays;
 
-    private MutableLiveData<Integer> allowedDelaysContainer = new MutableLiveData<>();
-    private MutableLiveData<Boolean> necessarilyWakeup = new MutableLiveData<>();
-    private MutableLiveData<Boolean> morningTime = new MutableLiveData<>();
+    private final MutableLiveData<Integer> allowedDelaysContainer = new MutableLiveData<>();
+    private final MutableLiveData<Boolean> necessarilyWakeup = new MutableLiveData<>();
+    private final MutableLiveData<Boolean> morningTime = new MutableLiveData<>();
+
+    private final MutableLiveData<Boolean> defaultMusic = new MutableLiveData<>();
+
+    private final MutableLiveData<ArrayList<String>> music = new MutableLiveData<>();
+
+    public LiveData<String> name() {return name;}
 
     public LiveData<Integer> allowedDelaysContainer() {
         return allowedDelaysContainer;
@@ -24,14 +38,34 @@ public class AlarmDetailsViewModel extends ViewModel {
         return morningTime;
     }
 
-    public AlarmDetailsViewModel() {
+    public LiveData<Boolean> defaultMusic() {
+        return defaultMusic;
+    }
+
+    public LiveData<ArrayList<String>> music() {
+        return music;
+    }
+
+    public AlarmDetailsViewModel(Application application) {
+        super(application);
         allowedDelays = 5;
+        name.setValue("Будильник");
+        allowedDelaysContainer.setValue(allowedDelays);
+        defaultMusic.setValue(true);
+        music.setValue(new ArrayList<>());
         necessarilyWakeup.setValue(false);
         morningTime.setValue(false);
     }
 
     public String getAllowedDelays() {
         return allowedDelays + " раз";
+    }
+
+    public void changeName(String name) {
+        if (name.equals("")) {
+            name = "Будильник";
+        }
+        this.name.setValue(name);
     }
 
     public void changeAllowedDelays(boolean increasing) {
@@ -51,5 +85,21 @@ public class AlarmDetailsViewModel extends ViewModel {
 
     public void switchMorningTime() {
         morningTime.setValue(Boolean.FALSE.equals(morningTime.getValue()));
+    }
+
+    public AlarmCommonItem formAlarmCommon() {
+        return new AlarmCommonItem(name.getValue(), allowedDelays,
+                Boolean.TRUE.equals(necessarilyWakeup.getValue()), Boolean.TRUE.equals(morningTime.getValue()),
+                Boolean.TRUE.equals(defaultMusic.getValue()), music.getValue());
+    }
+
+    public void setCommonInfo(AlarmCommonItem item) {
+        name.setValue(item.getName());
+        allowedDelays = item.getAllowedDelays();
+        allowedDelaysContainer.setValue(allowedDelays);
+        necessarilyWakeup.setValue(item.isNecessarilyWakeup());
+        morningTime.setValue(item.isMorningTime());
+        defaultMusic.setValue(item.isDefaultMusic());
+        music.setValue(item.getMusic());
     }
 }

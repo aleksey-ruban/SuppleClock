@@ -22,7 +22,10 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.Objects;
+
 import ru.alekseyruban.suppleclock.R;
+import ru.alekseyruban.suppleclock.data.models.PresentableAlarmClockItem;
 import ru.alekseyruban.suppleclock.databinding.FragmentAlarmsListBinding;
 import ru.alekseyruban.suppleclock.ui.adapters.AlarmRecyclerViewAdapter;
 
@@ -98,10 +101,28 @@ public class AlarmsListFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         binding.alarmsRecycleView.setLayoutManager(new LinearLayoutManager(getContext()));
-        binding.alarmsRecycleView.setAdapter(new AlarmRecyclerViewAdapter());
+        binding.alarmsRecycleView.setAdapter(new AlarmRecyclerViewAdapter(new OnPresentableAlarmActionsListener() {
+            @Override
+            public void onActivatedChanged(PresentableAlarmClockItem item) {
 
-        alarmsListViewModel.getItems().observe(getViewLifecycleOwner(), (value) -> {
-            ((AlarmRecyclerViewAdapter) binding.alarmsRecycleView.getAdapter()).updateData(value);
+            }
+
+            @Override
+            public void onMoreDetailsClick(PresentableAlarmClockItem item) {
+                Bundle bundle = new Bundle();
+                bundle.putInt("alarm_id", item.getAlarmId());
+                if (item.getAlarmType() == 0) {
+                    Navigation.findNavController(view).navigate(R.id.simpleClockFragment, bundle);
+                } else if (item.getAlarmType() == 1) {
+
+                } else if (item.getAlarmType() == 2) {
+                    Navigation.findNavController(view).navigate(R.id.scheduleClockFragment, bundle);
+                }
+            }
+        }));
+
+        alarmsListViewModel.getDatabaseItems().observe(getViewLifecycleOwner(), (value) -> {
+            ((AlarmRecyclerViewAdapter) Objects.requireNonNull(binding.alarmsRecycleView.getAdapter())).updateData(value);
         });
     }
 

@@ -5,9 +5,7 @@ import androidx.lifecycle.ViewModel;
 
 import java.util.List;
 
-import ru.alekseyruban.suppleclock.data.models.AlarmClockItem;
 import ru.alekseyruban.suppleclock.data.models.MusicItem;
-import ru.alekseyruban.suppleclock.data.repositories.CalendarDayAlarmsRepository;
 import ru.alekseyruban.suppleclock.data.repositories.MusicItemsRepository;
 
 public class SelectingMusicViewModel extends ViewModel {
