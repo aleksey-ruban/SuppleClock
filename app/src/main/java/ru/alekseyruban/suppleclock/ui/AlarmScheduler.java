@@ -80,4 +80,24 @@ public class AlarmScheduler {
         });
     }
 
+    public void snooze(int commonId, int delays) {
+        Intent intent = new Intent(application.getApplicationContext(), AlarmReciever.class);
+        intent.putExtra("commonId", commonId);
+        intent.putExtra("delays", delays);
+
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+
+            AppDatabase databaseSource = AppDatabase.getDatabase(application);
+            AlarmCommonEntity alarmCommonEntity = databaseSource.alarmCommonDAO().getAlarmCommonById(commonId);
+
+            @SuppressLint("UnspecifiedImmutableFlag") PendingIntent pendingIntent = PendingIntent.getBroadcast(application.getApplicationContext(), AlarmManager.RTC_WAKEUP, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTimeInMillis(System.currentTimeMillis());
+//            calendar.add(Calendar.MINUTE, 10);
+            calendar.add(Calendar.SECOND, 15);
+            alarmManager.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+        });
+    }
+
 }

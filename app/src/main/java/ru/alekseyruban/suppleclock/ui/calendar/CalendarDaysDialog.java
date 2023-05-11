@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,13 +16,21 @@ import android.view.WindowManager;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
+import androidx.lifecycle.Observer;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.Date;
+import java.util.List;
+import java.util.Objects;
+
 import ru.alekseyruban.suppleclock.R;
+import ru.alekseyruban.suppleclock.data.models.PresentableAlarmClockItem;
 import ru.alekseyruban.suppleclock.databinding.CalendarDialogBinding;
 import ru.alekseyruban.suppleclock.ui.adapters.AlarmRecyclerViewAdapter;
 import ru.alekseyruban.suppleclock.ui.adapters.CalendarRecycleAdapter;
+import ru.alekseyruban.suppleclock.ui.alarms_list.OnPresentableAlarmActionsListener;
 
 public class CalendarDaysDialog extends DialogFragment {
 
@@ -59,6 +68,13 @@ public class CalendarDaysDialog extends DialogFragment {
             }
         });
 
+        binding.closeDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismiss();
+            }
+        });
+
         return binding.getRoot();
     }
 
@@ -67,10 +83,39 @@ public class CalendarDaysDialog extends DialogFragment {
         super.onViewCreated(view, savedInstanceState);
 
         binding.alarmsRecycleView.setLayoutManager(new LinearLayoutManager(getContext()));
-        binding.alarmsRecycleView.setAdapter(new CalendarRecycleAdapter());
+        binding.alarmsRecycleView.setAdapter(new CalendarRecycleAdapter(new OnPresentableAlarmActionsListener() {
+            @Override
+            public void onActivatedChanged(PresentableAlarmClockItem item) {
+                if (!calendarViewModel.getWasSwitchedActive()) {
+                    calendarViewModel.switchAlarmActive(item.getAlarmId());
+                }
+                new Thread() {
+                    @Override
+                    public void run() {
+                        super.run();
+                        try {
+                            sleep(2000);
+                        } catch (InterruptedException e) {
+                            throw new RuntimeException(e);
+                        }
+                        calendarViewModel.setWasSwitchedActive(true);
+                    }
+                }.start();
+            }
 
-        calendarViewModel.getItems().observe(getViewLifecycleOwner(), (value) -> {
-            ((CalendarRecycleAdapter) binding.alarmsRecycleView.getAdapter()).updateData(value);
+            @Override
+            public void onMoreDetailsClick(PresentableAlarmClockItem item) {
+                calendarViewModel.setWasOpenedToEdit(false);
+                calendarViewModel.setAlarmIdToChange(item);
+                dismiss();
+            }
+        }));
+
+
+        calendarViewModel.getDatabaseItems(calendarViewModel.selectedDate).observe(getViewLifecycleOwner(), (value) -> {
+
+            ((CalendarRecycleAdapter) Objects.requireNonNull(binding.alarmsRecycleView.getAdapter())).updateData(value);
+
         });
     }
 

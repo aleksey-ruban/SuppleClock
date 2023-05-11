@@ -21,7 +21,7 @@
     <string name="_14_10">14:10</string>
     <string name="sunday_12_feb">Воскресенье, 12 февраля</string>
     <string name="type_good_morning">Введите \"Доброе утро\" для отключения будильника</string>
-    <string name="type_words">Введите словосочетание</string>
+    <string name="type_words">Введите фразу</string>
     <string name="hold_to_turn_off">Зажмите и удерживайте кнопки громкости для отключения будильника</string>
     <string name="shake_to_turnoff">Встряхните телефон для отключения будильника</string>
     <string name="sleep_remind">Напоминание ложиться спать</string>
@@ -76,5 +76,28 @@
         <item>Шаблонный</item>
     </string-array>
 
+    <string-array name="turn_off_type">
+        <item>Случайный</item>
+        <item>Ввод фразы</item>
+        <item>Потрясти телефон</item>
+        <item>Удерживать кнопки громкости</item>
+    </string-array>
+
     <string name="choose_alarm_type">Выберите тип будильника</string>
+    <string name="notification_title">Будильник</string>
+    <string name="notification_channel_name">alarm_notification</string>
+    <string name="notifiaction_channel_description">Уведомдления будильника</string>
+    <string name="notification_channel_id">SUPPLE_CLOCK_ALARM</string>
+    <string name="no_allowed_delays">Будильник больше нельзя откладывать</string>
+    <string name="preference_file_key">supple_clock_shared_pref</string>
+    <string name="sleep_notification">sleep_notification</string>
+    <string name="sleep_hours_target">sleep_hours_target</string>
+    <string name="sleep_minutes_target">sleep_minutes_target</string>
+    <string name="rest_before_sleep">rest_before_sleep</string>
+    <string name="extra_morning_time">extra_morning_time</string>
+    <string name="turn_off_type">turn_off_typ</string>
+    <string name="alarm_common_id">alarm_common_id</string>
+    <string name="alarm_delays_allowed">alarm_delays_allowed</string>
+    <string name="choose_turn_off_type">Выберете способ отключения</string>
+    <string name="select_time">Выберете время</string>
 </resources>

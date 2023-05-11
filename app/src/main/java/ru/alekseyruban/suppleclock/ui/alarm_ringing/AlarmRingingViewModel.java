@@ -18,9 +18,9 @@ public class AlarmRingingViewModel extends AndroidViewModel {
 
     private AlarmItemsRepository repo;
 
-    private final MutableLiveData<AlarmCommonEntity> alarmCommonEntity = new MutableLiveData<>();
-    public LiveData<AlarmCommonEntity> alarmCommonEntity() { return alarmCommonEntity; }
+    private MutableLiveData<AlarmCommonEntity> alarmCommonEntity = new MutableLiveData<>();
 
+    public LiveData<AlarmCommonEntity> alarmCommonEntity () { return alarmCommonEntity; }
 
 
     public AlarmRingingViewModel(@NonNull Application application, int commonId) {
@@ -33,5 +33,16 @@ public class AlarmRingingViewModel extends AndroidViewModel {
         });
 
     }
+
+    private MutableLiveData<String> data = new MutableLiveData<>();
+
+    public void setData(String newData) {
+        data.setValue(newData);
+    }
+
+    public LiveData<String> getData() {
+        return data;
+    }
+
 
 }

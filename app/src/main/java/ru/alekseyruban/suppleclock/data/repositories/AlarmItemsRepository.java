@@ -108,4 +108,13 @@ public class AlarmItemsRepository {
         });
     }
 
+    public void switchAlarmActive(int commonId) {
+        Log.i("ALARM_CLOCK", "ACTIVE CHANGE");
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            AlarmCommonEntity alarmCommonEntity = databaseSource.alarmCommonDAO().getAlarmCommonById(commonId);
+            alarmCommonEntity.activated = !alarmCommonEntity.activated;
+            databaseSource.alarmCommonDAO().update(alarmCommonEntity);
+        });
+    }
+
 }

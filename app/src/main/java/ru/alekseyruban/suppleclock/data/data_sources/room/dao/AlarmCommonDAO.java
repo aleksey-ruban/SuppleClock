@@ -41,6 +41,8 @@ public interface AlarmCommonDAO {
 
     @Query("DELETE FROM alarm_common_entity WHERE commonId = :id")
     void deleteAlarmCommonWithCommonId(int id);
+
+
 }
 
 

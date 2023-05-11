@@ -12,14 +12,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ru.alekseyruban.suppleclock.data.models.PresentableAlarmClockItem;
+import ru.alekseyruban.suppleclock.databinding.AlarmClockItemBinding;
 import ru.alekseyruban.suppleclock.databinding.CalendarDialogItemBinding;
+import ru.alekseyruban.suppleclock.ui.alarms_list.OnPresentableAlarmActionsListener;
 
 public class CalendarRecycleAdapter extends RecyclerView.Adapter<CalendarRecycleAdapter.CalendarAlarmItemHolder> {
 
-    List<PresentableAlarmClockItem> data;
+    private List<PresentableAlarmClockItem> data;
 
-    public CalendarRecycleAdapter() {
+    private final OnPresentableAlarmActionsListener listener;
+
+    public CalendarRecycleAdapter(OnPresentableAlarmActionsListener listener) {
         this.data = new ArrayList<>();
+        this.listener = listener;
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -42,11 +47,13 @@ public class CalendarRecycleAdapter extends RecyclerView.Adapter<CalendarRecycle
     @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull CalendarRecycleAdapter.CalendarAlarmItemHolder holder, int position) {
-        CalendarDialogItemBinding binding = holder.binding;
-        binding.nameTextView.setText(data.get(position).getAlarmName());
-        binding.timeTextView.setText(data.get(position).getAlarmTime());
-        binding.activatedSwitch.setChecked(data.get(position).getActivated());
-        binding.repeatingModeTextView.setText(data.get(position).getRepeating_mode());
+        holder.binding.nameTextView.setText(data.get(position).getAlarmName());
+        holder.binding.timeTextView.setText(data.get(position).getAlarmTime());
+        holder.binding.activatedSwitch.setChecked(data.get(position).getActivated());
+        holder.binding.repeatingModeTextView.setText(data.get(position).getRepeating_mode());
+
+        holder.binding.activatedSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> listener.onActivatedChanged(data.get(position)));
+        holder.binding.moreDetailsButton.setOnClickListener(v -> listener.onMoreDetailsClick(data.get(position)));
     }
 
     @Override
@@ -56,12 +63,10 @@ public class CalendarRecycleAdapter extends RecyclerView.Adapter<CalendarRecycle
 
     static class CalendarAlarmItemHolder extends RecyclerView.ViewHolder {
         public CalendarDialogItemBinding binding;
-
         public CalendarAlarmItemHolder(@NonNull View itemView) {
             super(itemView);
 
             binding = CalendarDialogItemBinding.bind(itemView);
         }
     }
-
 }

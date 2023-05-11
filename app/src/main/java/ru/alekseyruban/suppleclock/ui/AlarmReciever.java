@@ -15,6 +15,7 @@ public class AlarmReciever extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         int commonId = intent.getIntExtra("commonId", -1);
+        int delays = intent.getIntExtra("delays", 0);
 
         Log.i("ALARM_CLOCK", "SIGNAL, SIGNAL!!! " + commonId);
 
@@ -31,12 +32,15 @@ public class AlarmReciever extends BroadcastReceiver {
 //        i.putExtra("active_alarm_common_id", commonId);
 //        context.startActivity(i);
 
-        Intent i = new Intent(context, MainActivity.class);
+//        Intent i = new Intent(context, MainActivity.class);
+//        i.putExtra("active_alarm_common_id", commonId);
+//        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//        context.startActivity(i);
+
+        Intent i = new Intent(context, AlarmService.class); // Build the intent for the service
         i.putExtra("active_alarm_common_id", commonId);
-        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        context.startActivity(i);
-
-
+        i.putExtra("delays", delays);
+        context.getApplicationContext().startForegroundService(i);
 
     }
 }
