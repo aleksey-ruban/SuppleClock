@@ -17,7 +17,7 @@ import ru.alekseyruban.suppleclock.data.data_sources.room.entites.AlarmSimpleEnt
 public interface AlarmCommonDAO {
 
     @Query("SELECT * FROM alarm_common_entity")
-    LiveData<List<AlarmCommonEntity>> getAllAlarms();
+    List<AlarmCommonEntity> getAllCommonEntities();
 
     @Insert
     long addNewAlarmCommon(AlarmCommonEntity newItem);
@@ -41,7 +41,6 @@ public interface AlarmCommonDAO {
 
     @Query("DELETE FROM alarm_common_entity WHERE commonId = :id")
     void deleteAlarmCommonWithCommonId(int id);
-
 
 }
 

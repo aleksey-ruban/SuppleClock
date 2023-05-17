@@ -70,16 +70,6 @@ public class CalendarViewModel extends AndroidViewModel {
         return wasOpenedToEdit;
     }
 
-    private boolean wasSwitchedActive = false;
-
-    public void setWasSwitchedActive(boolean wasOpenedToEdit) {
-        this.wasSwitchedActive = wasOpenedToEdit;
-    }
-
-    public boolean getWasSwitchedActive() {
-        return wasSwitchedActive;
-    }
-
     public void setAlarmIdToChange(PresentableAlarmClockItem item) {
         alarmItemToChange.setValue(item);
     }
@@ -113,11 +103,27 @@ public class CalendarViewModel extends AndroidViewModel {
                         int dayOfWeek = c.get(Calendar.DAY_OF_MONTH);
                         int mount = c.get(Calendar.MONTH);
                         int year = c.get(Calendar.YEAR);
+
+                        c.setTime(new Date());
+                        c.add(Calendar.HOUR, 24);
+                        int dayOfWeek2 = c.get(Calendar.DAY_OF_MONTH);
+                        int mount2 = c.get(Calendar.MONTH);
+                        int year2 = c.get(Calendar.YEAR);
+
                         c.setTime(date);
+                        c.set(Calendar.HOUR, commonAndSimple.alarmSimple.hours);
+                        c.set(Calendar.MINUTE, commonAndSimple.alarmSimple.minutes);
                         int dayOfWeek1 = c.get(Calendar.DAY_OF_MONTH);
                         int mount1 = c.get(Calendar.MONTH);
                         int year1 = c.get(Calendar.YEAR);
-                        return (dayOfWeek == dayOfWeek1 && mount == mount1 && year == year1);
+
+                        boolean condToday = dayOfWeek == dayOfWeek1 && mount == mount1 && year == year1 && new Date().before(c.getTime());
+
+                        c.add(Calendar.HOUR, -24);
+
+                        boolean condTomorrow = dayOfWeek2 == dayOfWeek1 && mount2 == mount1 && year2 == year1 && new Date().after(c.getTime());
+
+                        return (condToday || condTomorrow);
                     } else if (count == 7) {
                         return true;
                     } else {

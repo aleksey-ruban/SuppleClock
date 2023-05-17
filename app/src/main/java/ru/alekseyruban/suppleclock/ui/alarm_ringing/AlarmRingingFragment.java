@@ -37,6 +37,7 @@ import java.util.Random;
 
 import ru.alekseyruban.suppleclock.R;
 import ru.alekseyruban.suppleclock.data.data_sources.room.entites.AlarmCommonEntity;
+import ru.alekseyruban.suppleclock.data.data_sources.room.entites.AlarmSimpleEntity;
 import ru.alekseyruban.suppleclock.data.data_sources.room.root.AppDatabase;
 import ru.alekseyruban.suppleclock.databinding.FragmentAlarmRingingBinding;
 import ru.alekseyruban.suppleclock.ui.AlarmScheduler;
@@ -56,6 +57,7 @@ public class AlarmRingingFragment extends Fragment {
     private boolean isBound = false;
 
     private AlarmCommonEntity alarmCommonEntity;
+    private AlarmSimpleEntity alarmSimpleEntity;
 
     private int delays;
 
@@ -80,6 +82,10 @@ public class AlarmRingingFragment extends Fragment {
         AppDatabase.databaseWriteExecutor.execute(() -> {
             AppDatabase databaseSource = AppDatabase.getDatabase(requireActivity().getApplication());
             alarmCommonEntity = databaseSource.alarmCommonDAO().getAlarmCommonById(commonId);
+
+            if (alarmCommonEntity.alarmType == 0) {
+                alarmSimpleEntity = databaseSource.alarmSimpleDAO().getAlarmSimpleWithCommonId(commonId);
+            }
 
             Log.i("ALARM_CLOCK", "ALARM ID " + commonId);
 
@@ -222,6 +228,18 @@ public class AlarmRingingFragment extends Fragment {
         if (isBound) {
             myService.stop();
             Navigation.findNavController(binding.getRoot()).popBackStack();
+
+            if (alarmCommonEntity.alarmType == 0) {
+                if (alarmSimpleEntity != null) {
+                    int n = 0;
+                    for (int i = 0; i < alarmSimpleEntity.alarmDays.size(); i++) {
+                        if (alarmSimpleEntity.alarmDays.get(i)) { n++; }
+                    }
+                    if (n == 0) {
+                        mViewModel.switchAlarmActive(alarmCommonEntity.commonId);
+                    }
+                }
+            }
 
             SharedPreferences sharedPref = getContext().getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
 

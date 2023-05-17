@@ -32,6 +32,9 @@ public class PresentableAlarmClockItem {
     public boolean getActivated() {
         return activated;
     }
+    public void setActivated(boolean activated) {
+        this.activated = activated;
+    }
 
     public PresentableAlarmClockItem(int alarmId, int alarmType, String alarm_name, int hours, int minutes, String repeating_mode, boolean activated) {
         this.alarmId = alarmId;

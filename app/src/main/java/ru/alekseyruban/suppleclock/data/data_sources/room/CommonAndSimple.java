@@ -39,7 +39,7 @@ public class CommonAndSimple {
             repMode.append("Единоразовый");
         }
 
-        return new PresentableAlarmClockItem(alarmCommon.commonId, alarmCommon.alarmType, alarmCommon.name, alarmSimple.hours, alarmSimple.minutes, repMode.toString(), true);
+        return new PresentableAlarmClockItem(alarmCommon.commonId, alarmCommon.alarmType, alarmCommon.name, alarmSimple.hours, alarmSimple.minutes, repMode.toString(), alarmCommon.activated);
     }
 
     public AlarmSimpleItem toSimpleModel() {

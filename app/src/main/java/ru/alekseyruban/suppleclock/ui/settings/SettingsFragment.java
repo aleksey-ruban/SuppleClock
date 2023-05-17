@@ -15,6 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,6 +28,7 @@ import java.util.Objects;
 
 import ru.alekseyruban.suppleclock.R;
 import ru.alekseyruban.suppleclock.databinding.FragmentSettingsBinding;
+import ru.alekseyruban.suppleclock.ui.AlarmScheduler;
 
 public class SettingsFragment extends Fragment {
 
@@ -69,6 +71,9 @@ public class SettingsFragment extends Fragment {
                 SharedPreferences.Editor editor = sharedPref.edit();
                 editor.putBoolean(getString(R.string.sleep_notification), isChecked);
                 editor.apply();
+
+                AlarmScheduler alarmScheduler = new AlarmScheduler(requireActivity().getApplication());
+                alarmScheduler.resetAll();
             }
         });
 
@@ -145,6 +150,9 @@ public class SettingsFragment extends Fragment {
                     editor.putInt(getString(R.string.extra_morning_time), hourOfDay * 60 + minute);
                     binding.extraTimeTextView.setText(hourOfDay * 60 + minute + " мин");
                 }
+
+                AlarmScheduler alarmScheduler = new AlarmScheduler(requireActivity().getApplication());
+                alarmScheduler.resetAll();
 
                 editor.apply();
 

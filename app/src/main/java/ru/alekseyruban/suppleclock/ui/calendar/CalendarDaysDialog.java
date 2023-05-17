@@ -86,25 +86,13 @@ public class CalendarDaysDialog extends DialogFragment {
         binding.alarmsRecycleView.setAdapter(new CalendarRecycleAdapter(new OnPresentableAlarmActionsListener() {
             @Override
             public void onActivatedChanged(PresentableAlarmClockItem item) {
-                if (!calendarViewModel.getWasSwitchedActive()) {
-                    calendarViewModel.switchAlarmActive(item.getAlarmId());
-                }
-                new Thread() {
-                    @Override
-                    public void run() {
-                        super.run();
-                        try {
-                            sleep(2000);
-                        } catch (InterruptedException e) {
-                            throw new RuntimeException(e);
-                        }
-                        calendarViewModel.setWasSwitchedActive(true);
-                    }
-                }.start();
+                calendarViewModel.switchAlarmActive(item.getAlarmId());
+
             }
 
             @Override
             public void onMoreDetailsClick(PresentableAlarmClockItem item) {
+                calendarViewModel.switchAlarmActive(item.getAlarmId());
                 calendarViewModel.setWasOpenedToEdit(false);
                 calendarViewModel.setAlarmIdToChange(item);
                 dismiss();

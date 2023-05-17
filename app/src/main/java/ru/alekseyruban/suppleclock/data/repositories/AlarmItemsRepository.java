@@ -14,6 +14,7 @@ import ru.alekseyruban.suppleclock.data.data_sources.room.CommonAndSimple;
 import ru.alekseyruban.suppleclock.data.data_sources.room.entites.AlarmCommonEntity;
 import ru.alekseyruban.suppleclock.data.data_sources.room.entites.AlarmSimpleEntity;
 import ru.alekseyruban.suppleclock.data.data_sources.room.root.AppDatabase;
+import ru.alekseyruban.suppleclock.data.models.AlarmCommonItem;
 import ru.alekseyruban.suppleclock.data.models.AlarmSimpleItem;
 import ru.alekseyruban.suppleclock.data.models.PresentableAlarmClockItem;
 import ru.alekseyruban.suppleclock.ui.AlarmScheduler;
@@ -98,6 +99,9 @@ public class AlarmItemsRepository {
 
             databaseSource.alarmCommonDAO().update(alarmCommonEntity);
             databaseSource.alarmSimpleDAO().update(alarmSimpleEntity);
+
+            AlarmScheduler alarmScheduler = new AlarmScheduler(application);
+            alarmScheduler.resetAll();
         });
     }
 
@@ -105,15 +109,20 @@ public class AlarmItemsRepository {
         AppDatabase.databaseWriteExecutor.execute(() -> {
             databaseSource.alarmCommonDAO().deleteAlarmCommonWithCommonId(commonId);
             databaseSource.alarmSimpleDAO().deleteAlarmSimpleWithCommonId(commonId);
+
+            AlarmScheduler alarmScheduler = new AlarmScheduler(application);
+            alarmScheduler.resetAll();
         });
     }
 
     public void switchAlarmActive(int commonId) {
-        Log.i("ALARM_CLOCK", "ACTIVE CHANGE");
         AppDatabase.databaseWriteExecutor.execute(() -> {
             AlarmCommonEntity alarmCommonEntity = databaseSource.alarmCommonDAO().getAlarmCommonById(commonId);
             alarmCommonEntity.activated = !alarmCommonEntity.activated;
             databaseSource.alarmCommonDAO().update(alarmCommonEntity);
+
+            AlarmScheduler alarmScheduler = new AlarmScheduler(application);
+            alarmScheduler.resetAll();
         });
     }
 

@@ -44,5 +44,9 @@ public class AlarmRingingViewModel extends AndroidViewModel {
         return data;
     }
 
+    public void switchAlarmActive(int commonId) {
+        repo.switchAlarmActive(commonId);
+    }
+
 
 }

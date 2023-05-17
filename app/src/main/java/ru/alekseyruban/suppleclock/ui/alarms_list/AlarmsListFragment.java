@@ -38,6 +38,7 @@ import java.util.Objects;
 import ru.alekseyruban.suppleclock.R;
 import ru.alekseyruban.suppleclock.data.models.PresentableAlarmClockItem;
 import ru.alekseyruban.suppleclock.databinding.FragmentAlarmsListBinding;
+import ru.alekseyruban.suppleclock.ui.AlarmScheduler;
 import ru.alekseyruban.suppleclock.ui.MusicService;
 import ru.alekseyruban.suppleclock.ui.adapters.AlarmRecyclerViewAdapter;
 
@@ -135,7 +136,7 @@ public class AlarmsListFragment extends Fragment {
         binding.alarmsRecycleView.setAdapter(new AlarmRecyclerViewAdapter(new OnPresentableAlarmActionsListener() {
             @Override
             public void onActivatedChanged(PresentableAlarmClockItem item) {
-
+                alarmsListViewModel.switchAlarmActive(item.getAlarmId());
             }
 
             @Override

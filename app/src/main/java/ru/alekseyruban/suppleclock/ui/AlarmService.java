@@ -52,13 +52,17 @@ public class AlarmService extends Service {
         NotificationManager notificationManager = getSystemService(NotificationManager.class);
         notificationManager.createNotificationChannel(channel);
 
+        Intent intentM = new Intent(this, MainActivity.class);
+        intentM.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intentM, PendingIntent.FLAG_IMMUTABLE);
+
         Notification notification =
                 new Notification.Builder(this, getString(R.string.notification_channel_id))
                         .setContentTitle(getText(R.string.notification_title))
 //                        .setContentText(getText(R.string.notification_message))
-//                        .setSmallIcon(R.drawable.icon)
-//                        .setContentIntent(pendingIntent)
+                        .setSmallIcon(R.drawable.ic_notification_icon)
 //                        .setTicker(getText(R.string.ticker_text))
+                        .setContentIntent(pendingIntent)
                         .build();
 
         startForeground(5432, notification);
