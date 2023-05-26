@@ -8,21 +8,14 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Transformations;
-import androidx.lifecycle.ViewModel;
 
-import java.nio.channels.CancelledKeyException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import java.util.Objects;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import ru.alekseyruban.suppleclock.data.data_sources.room.CommonAndSimple;
-import ru.alekseyruban.suppleclock.data.data_sources.room.root.AppDatabase;
-import ru.alekseyruban.suppleclock.data.models.AlarmCommonItem;
-import ru.alekseyruban.suppleclock.data.models.AlarmSimpleItem;
 import ru.alekseyruban.suppleclock.data.models.PresentableAlarmClockItem;
 import ru.alekseyruban.suppleclock.data.repositories.AlarmItemsRepository;
 import ru.alekseyruban.suppleclock.data.repositories.CalendarDayAlarmsRepository;
@@ -82,7 +75,6 @@ public class CalendarViewModel extends AndroidViewModel {
         month_name = month_name.substring(0, 1).toUpperCase() + month_name.substring(1);
         int year = cal.get(Calendar.YEAR);
         selectedMonthContainer.setValue(month_name + " " + year);
-        Log.d("SelectedMonth_CalendarViewModel", selectedDate.toString());
     }
 
     public LiveData<List<PresentableAlarmClockItem>> getDatabaseItems(Date date) {

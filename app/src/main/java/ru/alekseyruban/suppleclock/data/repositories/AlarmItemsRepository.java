@@ -1,7 +1,6 @@
 package ru.alekseyruban.suppleclock.data.repositories;
 
 import android.app.Application;
-import android.util.Log;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Transformations;
@@ -14,7 +13,6 @@ import ru.alekseyruban.suppleclock.data.data_sources.room.CommonAndSimple;
 import ru.alekseyruban.suppleclock.data.data_sources.room.entites.AlarmCommonEntity;
 import ru.alekseyruban.suppleclock.data.data_sources.room.entites.AlarmSimpleEntity;
 import ru.alekseyruban.suppleclock.data.data_sources.room.root.AppDatabase;
-import ru.alekseyruban.suppleclock.data.models.AlarmCommonItem;
 import ru.alekseyruban.suppleclock.data.models.AlarmSimpleItem;
 import ru.alekseyruban.suppleclock.data.models.PresentableAlarmClockItem;
 import ru.alekseyruban.suppleclock.ui.AlarmScheduler;
@@ -44,21 +42,6 @@ public class AlarmItemsRepository {
                 CommonAndSimple::toSimpleModel
         );
     }
-
-//    public AlarmSimpleItem getAlarmSimpleWithId(int alarmId) {
-////        Log.i("DQFMEO_DNQ", alarmId + "");
-////        return Transformations.map(
-////                databaseSource.alarmCommonDAO().getAlarmSimpleWithId(alarmId),
-////                CommonAndSimple::toSimpleModel);
-//
-//
-//    }
-
-//    public void addItem(Item newItem) {
-//        AppDatabase.databaseWriteExecutor.execute(() -> {
-//            databaseSource.itemDAO().addNewItem(new ItemEntity(newItem.getValue()));
-//        });
-//    }
 
     public LiveData<List<PresentableAlarmClockItem>> getData() {
         return mDataSource.items();

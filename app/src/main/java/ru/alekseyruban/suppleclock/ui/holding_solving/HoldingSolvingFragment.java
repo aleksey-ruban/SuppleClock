@@ -10,8 +10,6 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
 import android.os.Handler;
-import android.support.v4.media.MediaMetadataCompat;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -83,7 +81,5 @@ public class HoldingSolvingFragment extends Fragment {
         }
 
     }
-
-
 
 }

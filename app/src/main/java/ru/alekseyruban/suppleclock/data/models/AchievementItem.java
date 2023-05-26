@@ -29,10 +29,23 @@ public class AchievementItem {
         this.description = description;
     }
 
-    public AchievementItem(String imageUri, String name, String description) {
+    public Boolean getReceived() {
+        return isReceived;
+    }
+
+    public void setReceived(Boolean received) {
+        isReceived = received;
+    }
+
+    private Boolean isReceived;
+
+
+
+    public AchievementItem(String imageUri, String name, String description, boolean isReceived) {
         this.imageUri = imageUri;
         this.name = name;
         this.description = description;
+        this.isReceived = isReceived;
     }
 
 }

@@ -4,9 +4,6 @@ import java.util.ArrayList;
 
 public class AlarmSimpleItem extends AlarmCommonItem {
 
-//    private int simpleId;
-//    public int getSimpleId () { return simpleId;}
-
     private int hours;
     public int getHours() {return hours;}
 
@@ -18,9 +15,6 @@ public class AlarmSimpleItem extends AlarmCommonItem {
 
     private int colorNumber;
     public int getColorNumber() {return colorNumber;}
-
-//    private int alarmCommonId;
-//    public int getAlarmCommonId() {return alarmCommonId;}
 
     private AlarmSimpleItem() { }
 
@@ -34,7 +28,6 @@ public class AlarmSimpleItem extends AlarmCommonItem {
         this.minutes = minutes;
         this.alarmDays = alarmDays;
         this.colorNumber = colorNumber;
-//        this.alarmCommonId = alarmCommonId;
     }
 
 }

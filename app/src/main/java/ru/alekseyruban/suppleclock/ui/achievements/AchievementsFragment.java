@@ -6,26 +6,19 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.Date;
 import java.util.Objects;
 
 import ru.alekseyruban.suppleclock.R;
-import ru.alekseyruban.suppleclock.data.models.PresentableAlarmClockItem;
 import ru.alekseyruban.suppleclock.databinding.FragmentAchievementsBinding;
 import ru.alekseyruban.suppleclock.ui.adapters.AchievementsRecycleAdapter;
-import ru.alekseyruban.suppleclock.ui.adapters.AlarmRecyclerViewAdapter;
-import ru.alekseyruban.suppleclock.ui.alarms_list.OnPresentableAlarmActionsListener;
 
 public class AchievementsFragment extends Fragment {
 

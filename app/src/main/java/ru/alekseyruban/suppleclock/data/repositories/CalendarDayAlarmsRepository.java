@@ -3,10 +3,8 @@ package ru.alekseyruban.suppleclock.data.repositories;
 import android.app.Application;
 
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.Transformations;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import ru.alekseyruban.suppleclock.data.data_sources.CalendarDayAlarmsDataSource;
 import ru.alekseyruban.suppleclock.data.data_sources.room.CommonAndSimple;

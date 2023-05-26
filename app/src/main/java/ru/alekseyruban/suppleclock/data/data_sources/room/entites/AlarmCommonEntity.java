@@ -2,10 +2,8 @@ package ru.alekseyruban.suppleclock.data.data_sources.room.entites;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
-import androidx.room.ForeignKey;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
-import androidx.room.util.TableInfo;
 
 import java.util.ArrayList;
 

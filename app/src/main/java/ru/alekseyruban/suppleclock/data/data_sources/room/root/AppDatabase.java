@@ -2,7 +2,6 @@ package ru.alekseyruban.suppleclock.data.data_sources.room.root;
 
 import android.content.Context;
 
-import androidx.room.AutoMigration;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;

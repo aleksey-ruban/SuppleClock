@@ -6,7 +6,6 @@ import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,19 +15,14 @@ import android.view.WindowManager;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
-import androidx.lifecycle.Observer;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.Date;
-import java.util.List;
 import java.util.Objects;
 
 import ru.alekseyruban.suppleclock.R;
 import ru.alekseyruban.suppleclock.data.models.PresentableAlarmClockItem;
 import ru.alekseyruban.suppleclock.databinding.CalendarDialogBinding;
-import ru.alekseyruban.suppleclock.ui.adapters.AlarmRecyclerViewAdapter;
 import ru.alekseyruban.suppleclock.ui.adapters.CalendarRecycleAdapter;
 import ru.alekseyruban.suppleclock.ui.alarms_list.OnPresentableAlarmActionsListener;
 
@@ -115,7 +109,6 @@ public class CalendarDaysDialog extends DialogFragment {
             dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
-            // set "origin" to top left corner
             dialog.getWindow().setGravity(Gravity.BOTTOM);
 
             WindowManager.LayoutParams params = dialog.getWindow().getAttributes();

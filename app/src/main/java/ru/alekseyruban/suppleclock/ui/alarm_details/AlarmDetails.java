@@ -16,7 +16,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
-import ru.alekseyruban.suppleclock.R;
 import ru.alekseyruban.suppleclock.data.models.AlarmCommonItem;
 import ru.alekseyruban.suppleclock.databinding.FragmentAlarmDetailsBinding;
 

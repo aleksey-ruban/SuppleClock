@@ -7,11 +7,6 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.util.Log;
-
-import androidx.room.Dao;
-
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -20,7 +15,6 @@ import ru.alekseyruban.suppleclock.R;
 import ru.alekseyruban.suppleclock.data.data_sources.room.entites.AlarmCommonEntity;
 import ru.alekseyruban.suppleclock.data.data_sources.room.entites.AlarmSimpleEntity;
 import ru.alekseyruban.suppleclock.data.data_sources.room.root.AppDatabase;
-import ru.alekseyruban.suppleclock.data.models.AlarmSimpleItem;
 import ru.alekseyruban.suppleclock.data.repositories.AlarmItemsRepository;
 
 public class AlarmScheduler {
@@ -125,15 +119,11 @@ public class AlarmScheduler {
 
         AppDatabase.databaseWriteExecutor.execute(() -> {
 
-            AppDatabase databaseSource = AppDatabase.getDatabase(application);
-            AlarmCommonEntity alarmCommonEntity = databaseSource.alarmCommonDAO().getAlarmCommonById(commonId);
-
             @SuppressLint("UnspecifiedImmutableFlag") PendingIntent pendingIntent = PendingIntent.getBroadcast(application.getApplicationContext(), AlarmManager.RTC_WAKEUP, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
             Calendar calendar = Calendar.getInstance();
             calendar.setTimeInMillis(System.currentTimeMillis());
-//            calendar.add(Calendar.MINUTE, 10);
-            calendar.add(Calendar.SECOND, 15);
+            calendar.add(Calendar.MINUTE, 10);
             alarmManager.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
         });
     }
@@ -157,7 +147,6 @@ public class AlarmScheduler {
                 }
             }
         });
-
     }
 
 }

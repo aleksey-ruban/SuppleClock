@@ -2,6 +2,8 @@ package ru.alekseyruban.suppleclock.ui.adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,6 +53,14 @@ public class AchievementsRecycleAdapter extends RecyclerView.Adapter<Achievement
 
         holder.binding.image.setImageDrawable(ResourcesCompat.getDrawable(context.getResources(), imageResource, null));
 
+        if (!data.get(position).getReceived()) {
+            ColorMatrix matrix = new ColorMatrix();
+            matrix.setSaturation(0);
+
+            ColorMatrixColorFilter filter = new ColorMatrixColorFilter(matrix);
+            holder.binding.image.setColorFilter(filter);
+        }
+        
         holder.binding.name.setText(data.get(position).getName());
         holder.binding.description.setText(data.get(position).getDescription());
     }

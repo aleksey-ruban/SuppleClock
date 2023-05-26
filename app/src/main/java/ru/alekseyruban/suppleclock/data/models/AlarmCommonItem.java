@@ -4,9 +4,6 @@ import java.util.ArrayList;
 
 public class AlarmCommonItem {
 
-//    private int commonId;
-//    public int getCommonId() { return commonId;}
-
     private String name;
     public String getName() {return name;}
 

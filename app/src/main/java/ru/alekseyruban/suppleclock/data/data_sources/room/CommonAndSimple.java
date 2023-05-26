@@ -1,7 +1,5 @@
 package ru.alekseyruban.suppleclock.data.data_sources.room;
 
-import android.util.Log;
-
 import androidx.room.Embedded;
 import androidx.room.Relation;
 

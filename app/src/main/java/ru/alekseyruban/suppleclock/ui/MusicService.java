@@ -1,5 +1,6 @@
 package ru.alekseyruban.suppleclock.ui;
 
+import android.annotation.SuppressLint;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
@@ -14,7 +15,7 @@ import ru.alekseyruban.suppleclock.R;
 public class MusicService extends Service {
 
     MyBinder binder = new MyBinder();
-    MusicService services;
+    @SuppressLint("StaticFieldLeak")
     static Context context;
 
     private MediaPlayer mPlayer;
@@ -38,10 +39,6 @@ public class MusicService extends Service {
         mPlayer = MediaPlayer.create(getApplicationContext(), R.raw.htc_basic);
         mPlayer.setLooping(true);
         mPlayer.start();
-    }
-
-    public void play() {
-
     }
 
     public void stop() {

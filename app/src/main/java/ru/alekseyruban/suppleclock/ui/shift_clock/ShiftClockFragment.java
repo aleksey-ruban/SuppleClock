@@ -13,7 +13,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import ru.alekseyruban.suppleclock.R;
 import ru.alekseyruban.suppleclock.databinding.FragmentShiftClockBinding;
 
 public class ShiftClockFragment extends Fragment {
@@ -29,6 +28,7 @@ public class ShiftClockFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         binding = FragmentShiftClockBinding.inflate(inflater, container, false);
+        mViewModel = new ViewModelProvider(this).get(ShiftClockViewModel.class);
 
         binding.backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,11 +40,5 @@ public class ShiftClockFragment extends Fragment {
         return binding.getRoot();
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(ShiftClockViewModel.class);
-        // TODO: Use the ViewModel
-    }
 
 }

@@ -6,9 +6,6 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
-
-import java.util.ArrayList;
 
 import ru.alekseyruban.suppleclock.data.data_sources.room.entites.AlarmCommonEntity;
 import ru.alekseyruban.suppleclock.data.data_sources.room.root.AppDatabase;
@@ -19,9 +16,6 @@ public class AlarmRingingViewModel extends AndroidViewModel {
     private AlarmItemsRepository repo;
 
     private MutableLiveData<AlarmCommonEntity> alarmCommonEntity = new MutableLiveData<>();
-
-    public LiveData<AlarmCommonEntity> alarmCommonEntity () { return alarmCommonEntity; }
-
 
     public AlarmRingingViewModel(@NonNull Application application, int commonId) {
         super(application);

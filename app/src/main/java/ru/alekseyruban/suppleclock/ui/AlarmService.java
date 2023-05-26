@@ -18,17 +18,10 @@ import ru.alekseyruban.suppleclock.R;
 
 public class AlarmService extends Service {
 
-
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
         Log.i("ALARM_CLOCK", "START SERVICE!!!");
-
-//        Intent notificationIntent = new Intent(this, MainActivity.class);
-//        notificationIntent.putExtra("active_alarm_common_id", intent.getIntExtra("active_alarm_common_id", -1));
-//        PendingIntent pendingIntent =
-//                PendingIntent.getActivity(this, 0, notificationIntent,
-//                        PendingIntent.FLAG_UPDATE_CURRENT);
 
         Intent i = new Intent(this, MainActivity.class);
         i.putExtra("active_alarm_common_id", intent.getIntExtra("active_alarm_common_id", -1));
@@ -59,9 +52,7 @@ public class AlarmService extends Service {
         Notification notification =
                 new Notification.Builder(this, getString(R.string.notification_channel_id))
                         .setContentTitle(getText(R.string.notification_title))
-//                        .setContentText(getText(R.string.notification_message))
                         .setSmallIcon(R.drawable.ic_notification_icon)
-//                        .setTicker(getText(R.string.ticker_text))
                         .setContentIntent(pendingIntent)
                         .build();
 
@@ -79,13 +70,7 @@ public class AlarmService extends Service {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        Log.i("ALARM_CLOCK", "BIND SERVICE!!!");
         return null;
     }
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        Log.i("ALARM_CLOCK", "DESTROY SERVICE!!!");
-    }
 }

@@ -1,30 +1,20 @@
 package ru.alekseyruban.suppleclock.ui.simpleClock;
 
 import android.app.Application;
-import android.util.Log;
 
-import androidx.annotation.Nullable;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.Observer;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;
 
-import ru.alekseyruban.suppleclock.data.data_sources.room.entites.AlarmCommonEntity;
 import ru.alekseyruban.suppleclock.data.models.AlarmCommonItem;
 import ru.alekseyruban.suppleclock.data.models.AlarmSimpleItem;
-import ru.alekseyruban.suppleclock.data.models.PresentableAlarmClockItem;
 import ru.alekseyruban.suppleclock.data.repositories.AlarmItemsRepository;
-import ru.alekseyruban.suppleclock.ui.AlarmScheduler;
-
 
 public class SimpleClockViewModel extends AndroidViewModel {
-
-    private LiveData<AlarmSimpleItem> alarmSimpleItem;
 
     private final AlarmItemsRepository repo;
 
@@ -45,10 +35,6 @@ public class SimpleClockViewModel extends AndroidViewModel {
     public LiveData<ArrayList<Boolean>> selectedDaysContainer() {
         return selectedDaysContainer;
     }
-    public LiveData<Integer> hours() {return hours;}
-    public LiveData<Integer> minutes() {return minutes;}
-
-    public LiveData<Integer> colorNumber() {return hours;}
 
     private LiveData<AlarmSimpleItem> editingAlarmSimple;
 

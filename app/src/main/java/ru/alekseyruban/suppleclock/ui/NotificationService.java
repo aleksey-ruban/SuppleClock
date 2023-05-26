@@ -5,14 +5,10 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.IBinder;
-import android.util.Log;
 
 import androidx.annotation.Nullable;
-import androidx.core.app.NotificationManagerCompat;
 
 import ru.alekseyruban.suppleclock.MainActivity;
 import ru.alekseyruban.suppleclock.R;
@@ -21,8 +17,6 @@ public class NotificationService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-
-        Log.i("ALARM_CLOCK", "START SERVICE!!!");
 
         CharSequence name = getString(R.string.notification_before_sleep_channel_name);
         String description = getString(R.string.notifiaction_defore_sleep_channel_description);

@@ -1,7 +1,6 @@
 package ru.alekseyruban.suppleclock;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;;
 import android.util.Log;
@@ -22,7 +21,6 @@ import androidx.navigation.ui.NavigationUI;
 import java.util.Objects;
 
 import ru.alekseyruban.suppleclock.databinding.ActivityMainBinding;
-import ru.alekseyruban.suppleclock.ui.NotificationService;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Log.i("ALARM_CLOCK", "MAIN ACTIVITY");
 
         Objects.requireNonNull(getSupportActionBar()).hide();
 
@@ -40,8 +37,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_alarm_list, R.id.navigation_calendar, R.id.navigation_achievements)
                 .build();
@@ -93,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         } else if(keyCode == KeyEvent.KEYCODE_VOLUME_UP){
             upButton = true;
         }
-        if(upButton || downButton) {
+        if(upButton && downButton) {
             Log.i("button down", "yes");
             Objects.requireNonNull(Navigation.findNavController(this, R.id.nav_host_fragment_activity_main).getCurrentBackStackEntry()).getSavedStateHandle().set("volume_down", "1");
         }

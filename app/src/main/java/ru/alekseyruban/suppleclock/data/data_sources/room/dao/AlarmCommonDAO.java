@@ -11,7 +11,6 @@ import java.util.List;
 
 import ru.alekseyruban.suppleclock.data.data_sources.room.CommonAndSimple;
 import ru.alekseyruban.suppleclock.data.data_sources.room.entites.AlarmCommonEntity;
-import ru.alekseyruban.suppleclock.data.data_sources.room.entites.AlarmSimpleEntity;
 
 @Dao
 public interface AlarmCommonDAO {

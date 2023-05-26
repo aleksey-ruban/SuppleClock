@@ -12,7 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
-import ru.alekseyruban.suppleclock.R;
 import ru.alekseyruban.suppleclock.databinding.ScheduledWeekDetailsBinding;
 
 public class ScheduledWeekDialog extends DialogFragment {

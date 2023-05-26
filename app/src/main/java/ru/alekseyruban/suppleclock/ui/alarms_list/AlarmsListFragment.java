@@ -1,16 +1,13 @@
 package ru.alekseyruban.suppleclock.ui.alarms_list;
 
 import android.annotation.SuppressLint;
-import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.os.Bundle;
-import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,16 +17,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.NavController;
-import androidx.navigation.NavDestination;
-import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
-import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
@@ -38,8 +30,6 @@ import java.util.Objects;
 import ru.alekseyruban.suppleclock.R;
 import ru.alekseyruban.suppleclock.data.models.PresentableAlarmClockItem;
 import ru.alekseyruban.suppleclock.databinding.FragmentAlarmsListBinding;
-import ru.alekseyruban.suppleclock.ui.AlarmScheduler;
-import ru.alekseyruban.suppleclock.ui.MusicService;
 import ru.alekseyruban.suppleclock.ui.adapters.AlarmRecyclerViewAdapter;
 
 public class AlarmsListFragment extends Fragment {
@@ -89,30 +79,6 @@ public class AlarmsListFragment extends Fragment {
 
                 Navigation.findNavController(v).navigate(R.id.simpleClockFragment);
 
-
-//                AlertDialog.Builder dialog = new AlertDialog.Builder(new ContextThemeWrapper(getActivity(), R.style.AlertDialogCustom));
-//                dialog.setTitle(R.string.choose_alarm_type);
-//                dialog.setItems(R.array.alarm_types, new DialogInterface.OnClickListener() {
-//
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int position) {
-//                        switch (position) {
-//                            case 0:
-//                                Navigation.findNavController(v).navigate(R.id.simpleClockFragment);
-//                                break;
-//                            case 1:
-//                                Navigation.findNavController(v).navigate(R.id.shiftClockFragment);
-//                                break;
-//                            case 2:
-//                                Navigation.findNavController(v).navigate(R.id.scheduleClockFragment);
-//                                break;
-//                        }
-//                    }
-//
-//                });
-//
-//                AlertDialog alert = dialog.create();
-//                alert.show();
             }
         });
 

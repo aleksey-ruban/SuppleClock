@@ -15,11 +15,10 @@ public class AchievementsDataSource {
 
         ArrayList<AchievementItem> resultArr = new ArrayList<>();
 
-        resultArr.add(new AchievementItem("@mipmap/ic_holiday_achievement", "Отличный отпуск", "За весь отпуск вы ни разу не использовали будильник"));
-        resultArr.add(new AchievementItem("@mipmap/ic_first_try_achievement", "С первого раза", "Вы не откладывали сигнал будильника на протяжении недели"));
-        resultArr.add(new AchievementItem("@mipmap/ic_planning_achievement", "Планы на будущее", "Вы смотрите свой график и строите планы"));
-        resultArr.add(new AchievementItem("@mipmap/ic_holiday_achievement", "С первого раза", "Вы не откладывали сигнал будильника на протяжении недели"));
-
+        resultArr.add(new AchievementItem("@mipmap/ic_first_try_achievement", "Недельный марафон", "Вы не откладывали сигнал будильника на протяжении недели", false));
+        resultArr.add(new AchievementItem("@mipmap/ic_holiday_achievement", "Отличный отпуск", "За весь отпуск вы ни разу не использовали будильник", false));
+        resultArr.add(new AchievementItem("@mipmap/ic_planning_achievement", "Планы на будущее", "Вы смотрите свой график и строите планы", false));
+        resultArr.add(new AchievementItem("@mipmap/ic_notification_achievement", "Здоровый сон", "Вы настроили напоминания об отходе ко сну", false));
 
         result.postValue(resultArr);
 

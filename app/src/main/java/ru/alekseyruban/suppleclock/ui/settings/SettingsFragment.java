@@ -15,7 +15,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
-import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,7 +23,6 @@ import android.widget.CompoundButton;
 import android.widget.TimePicker;
 
 import java.util.Arrays;
-import java.util.Objects;
 
 import ru.alekseyruban.suppleclock.R;
 import ru.alekseyruban.suppleclock.databinding.FragmentSettingsBinding;
